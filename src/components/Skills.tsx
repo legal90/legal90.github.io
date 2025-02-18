@@ -1,31 +1,36 @@
 
 const skills = {
+  "Core Competencies": [
+    "Site Reliability Engineering",
+    "DevOps",
+    "Tech Leadership",
+    "Team Management",
+  ],
   "Cloud & Infrastructure": [
-    "AWS",
     "Kubernetes",
-    "Docker",
+    "GCP",
+    "AWS",
     "Terraform",
-    "Linux",
+    "ArgoCD",
+    "Helm",
   ],
-  "Monitoring & Observability": [
-    "Grafana",
-    "Prometheus",
-    "ELK Stack",
+  "Observability & Security": [
     "Datadog",
+    "Splunk",
+    "Prometheus",
+    "Grafana",
+    "PagerDuty",
+    "SOC2",
   ],
-  "Programming & Scripting": [
-    "Go",
-    "Python",
-    "Bash",
-    "Ruby",
-  ],
-  "CI/CD & Version Control": [
-    "GitLab CI",
+  "CI/CD & Tools": [
+    "GitOps",
     "GitHub Actions",
     "Jenkins",
-    "Git",
+    "Cloud Build",
+    "Docker",
+    "Linux",
   ],
-};
+];
 
 const Skills = () => {
   return (

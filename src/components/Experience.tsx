@@ -3,22 +3,34 @@ import { Check } from "lucide-react";
 
 const experiences = [
   {
-    title: "Site Reliability Engineer",
-    company: "Grafana Labs",
-    period: "2021 - Present",
-    description: "Leading SRE initiatives for cloud-native monitoring solutions.",
+    title: "Head of Site Reliability",
+    company: "Billhop",
+    period: "Apr 2023 - Present",
+    description: "Leading SRE team initiatives, managing cloud infrastructure on GCP, implementing security guidelines, and establishing Infrastructure-as-Code practices using Terraform, Terragrunt, and ArgoCD.",
+  },
+  {
+    title: "Lead Site Reliability Engineer",
+    company: "Symphony",
+    period: "Apr 2020 - Apr 2023",
+    description: "Led infrastructure automation and migration to GKE, implemented CI/CD pipelines, and improved observability using Splunk, Datadog, and PagerDuty.",
   },
   {
     title: "Senior Platform Engineer",
-    company: "ITRex Group",
-    period: "2018 - 2021",
-    description: "Architected and maintained cloud infrastructure for enterprise clients.",
+    company: "Volvo Cars",
+    period: "Jun 2018 - Apr 2020",
+    description: "Designed and operated internal Kubernetes-based PaaS, managed multiple clusters using kops, Helm, and Terraform, and developed internal tooling for logging, monitoring, and CI/CD.",
   },
   {
-    title: "DevOps Engineer",
-    company: "ScienceSoft",
-    period: "2013 - 2018",
-    description: "Implemented CI/CD pipelines and automated deployment processes.",
+    title: "Infrastructure Engineer",
+    company: "Apica Systems",
+    period: "Feb 2017 - Jun 2018",
+    description: "Maintained infrastructure for SaaS solutions across multiple cloud providers, implemented Infrastructure-as-Code, and developed automated build solutions.",
+  },
+  {
+    title: "Infrastructure Engineer",
+    company: "Parallels Inc.",
+    period: "Jul 2013 - Jan 2017",
+    description: "Led DevOps initiatives, managed cloud infrastructure, and contributed to open-source projects including Vagrant provider and Docker Machine driver.",
   },
 ];
 

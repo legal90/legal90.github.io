@@ -30,7 +30,7 @@ const skills = {
     "Docker",
     "Linux",
   ],
-];
+};
 
 const Skills = () => {
   return (

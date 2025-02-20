@@ -86,25 +86,17 @@ const experiences = [
   },
   {
     title: "System Administrator",
-    company: "Enterprise IT Services",
+    company: "Roseltorg (Unified Electronic Trading Platform)",
     period: "Jun 2012 - Jul 2013",
-    description: "Managed enterprise IT infrastructure and systems, ensuring high availability and security of critical business services.",
-    achievements: [
-      "Maintained and supported enterprise-level IT infrastructure",
-      "Ensured system availability and security",
-      "Provided technical support for business-critical applications",
-    ],
+    description: "",
+    achievements: [],
   },
   {
     title: "System Administrator",
-    company: "Telecommunications Industry",
+    company: "MFI Soft",
     period: "Jun 2010 - Jun 2012",
-    description: "Supported telecommunications infrastructure and managed system operations for business applications.",
-    achievements: [
-      "Managed system operations and infrastructure",
-      "Provided technical support and maintenance",
-      "Ensured reliable operation of business systems",
-    ],
+    description: "",
+    achievements: [],
   },
 ];
 

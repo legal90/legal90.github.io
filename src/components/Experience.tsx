@@ -1,4 +1,5 @@
-import { Check, ChevronDown } from "lucide-react";
+
+import { Check, ChevronDown, Star } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -70,24 +71,44 @@ const Experience = () => {
         <div className="absolute left-[47px] top-24 bottom-8 w-[2px] bg-gradient-to-b from-primary/30 to-primary/10" />
         
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp, index) => {
+            const isCurrentJob = index === 0; // First position is the current one
+            
+            return (
             <div key={index} className="relative">
-              {/* Connecting dot */}
-              <div className="absolute left-[44px] top-[28px] w-8 h-8 rounded-full bg-primary/10 animate-pulse" />
+              {/* Connecting dot with different style for current job */}
+              <div className={`absolute left-[44px] top-[28px] w-8 h-8 rounded-full ${
+                isCurrentJob ? 'bg-primary/20 animate-pulse' : 'bg-primary/10'
+              }`} />
               
               <Collapsible
                 open={openIndex === index}
                 onOpenChange={() => setOpenIndex(openIndex === index ? null : index)}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 relative z-10"
+                className={`bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 relative z-10 ${
+                  isCurrentJob ? 'ring-2 ring-primary/20 ring-offset-2 ring-offset-muted' : ''
+                }`}
               >
                 <CollapsibleTrigger asChild>
                   <div className="w-full p-6 cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <div className="bg-primary rounded-full p-2 mt-1 shadow-md relative z-20 select-none">
-                        <Check className="w-4 h-4 text-white" />
+                      <div className={`rounded-full p-2 mt-1 shadow-md relative z-20 select-none ${
+                        isCurrentJob ? 'bg-primary animate-pulse' : 'bg-primary'
+                      }`}>
+                        {isCurrentJob ? (
+                          <Star className="w-4 h-4 text-white" />
+                        ) : (
+                          <Check className="w-4 h-4 text-white" />
+                        )}
                       </div>
                       <div className="flex-1 text-left">
-                        <h3 className="text-xl font-semibold text-accent">{exp.title}</h3>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-xl font-semibold text-accent">{exp.title}</h3>
+                          {isCurrentJob && (
+                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">
+                              Current
+                            </span>
+                          )}
+                        </div>
                         <p className="text-primary font-medium mt-1">{exp.company}</p>
                         <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
                         <p className="text-muted-foreground mt-3">{exp.description}</p>
@@ -124,7 +145,7 @@ const Experience = () => {
                 </>
               )}
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

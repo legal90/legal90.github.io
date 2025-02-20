@@ -110,15 +110,13 @@ const Experience = () => {
         <h2 className="text-3xl font-bold text-accent mb-12 text-center">Experience</h2>
         
         {/* Road Background */}
-        <div className="absolute left-[47px] top-24 bottom-8 w-[2px] bg-gradient-to-b from
--primary/30 to-primary/10" />
+        <div className="absolute left-[47px] top-24 bottom-8 w-[2px] bg-gradient-to-b from-primary/30 to-primary/10" />
         
-        <div className="space-y-16">
+        <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="relative">
               {/* Connecting dot */}
-              <div className="absolute left-[44px] top-[28px] w-8 h-8 rounded-full bg-primary/10 
-animate-pulse" />
+              <div className="absolute left-[44px] top-[28px] w-8 h-8 rounded-full bg-primary/10 animate-pulse" />
               
               <Collapsible
                 open={openIndex === index}

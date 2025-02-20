@@ -106,49 +106,67 @@ const Experience = () => {
 
   return (
     <section className="py-20 px-4 bg-muted animate-fade-in" id="experience">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto relative">
         <h2 className="text-3xl font-bold text-accent mb-12 text-center">Experience</h2>
-        <div className="space-y-6">
+        
+        {/* Road Background */}
+        <div className="absolute left-[47px] top-24 bottom-8 w-[2px] bg-gradient-to-b from
+-primary/30 to-primary/10" />
+        
+        <div className="space-y-16">
           {experiences.map((exp, index) => (
-            <Collapsible
-              key={index}
-              open={openIndex === index}
-              onOpenChange={() => setOpenIndex(openIndex === index ? null : index)}
-              className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-            >
-              <CollapsibleTrigger className="w-full p-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary rounded-full p-2 mt-1">
-                    <Check className="w-4 h-4 text-white" />
+            <div key={index} className="relative">
+              {/* Connecting dot */}
+              <div className="absolute left-[44px] top-[28px] w-8 h-8 rounded-full bg-primary/10 
+animate-pulse" />
+              
+              <Collapsible
+                open={openIndex === index}
+                onOpenChange={() => setOpenIndex(openIndex === index ? null : index)}
+                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 relative z-10"
+              >
+                <CollapsibleTrigger className="w-full p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary rounded-full p-2 mt-1 shadow-md relative z-20">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-xl font-semibold text-accent">{exp.title}</h3>
+                      <p className="text-primary font-medium mt-1">{exp.company}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
+                      <p className="text-muted-foreground mt-3">{exp.description}</p>
+                    </div>
+                    {exp.achievements.length > 0 && (
+                      <ChevronDown
+                        className={`w-5 h-5 text-muted-foreground transition-transform ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
                   </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="text-xl font-semibold text-accent">{exp.title}</h3>
-                    <p className="text-primary font-medium mt-1">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
-                    <p className="text-muted-foreground mt-3">{exp.description}</p>
-                  </div>
-                  {exp.achievements.length > 0 && (
-                    <ChevronDown
-                      className={`w-5 h-5 text-muted-foreground transition-transform ${
-                        openIndex === index ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </div>
-              </CollapsibleTrigger>
-              {exp.achievements.length > 0 && (
-                <CollapsibleContent>
-                  <div className="px-6 pb-6 pt-2">
-                    <h4 className="font-semibold text-accent mb-3">Key Achievements:</h4>
-                    <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i}>{achievement}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </CollapsibleContent>
+                </CollapsibleTrigger>
+                {exp.achievements.length > 0 && (
+                  <CollapsibleContent>
+                    <div className="px-6 pb-6 pt-2">
+                      <h4 className="font-semibold text-accent mb-3">Key Achievements:</h4>
+                      <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i}>{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CollapsibleContent>
+                )}
+              </Collapsible>
+              
+              {/* Decorative elements */}
+              {index !== experiences.length - 1 && (
+                <>
+                  <div className="absolute left-[47px] top-24 h-16 w-[2px] bg-gradient-to-b from-primary to-primary/30" />
+                  <div className="absolute left-[43px] top-32 w-[10px] h-[10px] rounded-full bg-primary/40" />
+                </>
               )}
-            </Collapsible>
+            </div>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import { Check, ChevronDown } from "lucide-react";
 import {
   Collapsible,
@@ -126,23 +127,27 @@ const Experience = () => {
                     <p className="text-sm text-muted-foreground mt-1">{exp.period}</p>
                     <p className="text-muted-foreground mt-3">{exp.description}</p>
                   </div>
-                  <ChevronDown
-                    className={`w-5 h-5 text-muted-foreground transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
+                  {exp.achievements.length > 0 && (
+                    <ChevronDown
+                      className={`w-5 h-5 text-muted-foreground transition-transform ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
                 </div>
               </CollapsibleTrigger>
-              <CollapsibleContent>
-                <div className="px-6 pb-6 pt-2">
-                  <h4 className="font-semibold text-accent mb-3">Key Achievements:</h4>
-                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
-              </CollapsibleContent>
+              {exp.achievements.length > 0 && (
+                <CollapsibleContent>
+                  <div className="px-6 pb-6 pt-2">
+                    <h4 className="font-semibold text-accent mb-3">Key Achievements:</h4>
+                    <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                      {exp.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </CollapsibleContent>
+              )}
             </Collapsible>
           ))}
         </div>
